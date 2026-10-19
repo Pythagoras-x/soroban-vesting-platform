@@ -1620,7 +1620,11 @@ mod tests {
         let stub_id = env.register(stub_token::StubToken, ());
 
         // No proposals yet — count must be 0.
-        assert_eq!(ms.proposal_count(), 0u64, "initial proposal_count should be 0");
+        assert_eq!(
+            ms.proposal_count(),
+            0u64,
+            "initial proposal_count should be 0"
+        );
 
         // Submit first proposal.
         ms.submit(
@@ -1628,7 +1632,11 @@ mod tests {
             &call_action(&env, &stub_id, symbol_short!("ping")),
             &String::from_str(&env, "proposal 1"),
         );
-        assert_eq!(ms.proposal_count(), 1u64, "proposal_count should be 1 after first submit");
+        assert_eq!(
+            ms.proposal_count(),
+            1u64,
+            "proposal_count should be 1 after first submit"
+        );
 
         // Submit second proposal.
         ms.submit(
@@ -1636,7 +1644,11 @@ mod tests {
             &call_action(&env, &stub_id, symbol_short!("ping")),
             &String::from_str(&env, "proposal 2"),
         );
-        assert_eq!(ms.proposal_count(), 2u64, "proposal_count should be 2 after second submit");
+        assert_eq!(
+            ms.proposal_count(),
+            2u64,
+            "proposal_count should be 2 after second submit"
+        );
 
         // Submit third proposal.
         ms.submit(
@@ -1644,6 +1656,10 @@ mod tests {
             &call_action(&env, &stub_id, symbol_short!("ping")),
             &String::from_str(&env, "proposal 3"),
         );
-        assert_eq!(ms.proposal_count(), 3u64, "proposal_count should be 3 after third submit");
+        assert_eq!(
+            ms.proposal_count(),
+            3u64,
+            "proposal_count should be 3 after third submit"
+        );
     }
 }

@@ -3361,11 +3361,7 @@ mod prop_tests {
 pub(crate) mod test_helpers {
     use super::*;
     use ::token::{TokenContract, TokenContractClient};
-    use soroban_sdk::{
-        testutils::Address as _,
-        token::StellarAssetClient,
-        Env, String,
-    };
+    use soroban_sdk::{testutils::Address as _, token::StellarAssetClient, Env, String};
 
     /// Deploy a `VestingContract` with `admin` and return its contract address.
     pub fn deploy_vesting_with_admin(env: &Env, admin: &Address) -> Address {
