@@ -6,6 +6,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added — 2026-10-19
+
+- docs/api.md: REST API reference for the backend (#60). One
+  section per route group (health, vesting, token, multisig) documenting
+  all 29 endpoints (the 28 listed in the issue plus `GET /api/health/ready`,
+  which exists in `health.js`) with method, path, request fields with types
+  and required flags, success status and response shape, and error responses —
+  derived directly from `backend/src/routes/*.js`. Covers the shared
+  `contractId` resolution
+  (body → query → env var), 200/202 success conventions, the `{ error }` /
+  `{ error, code }` error shapes, rate limiting, and stub-vs-live response
+  differences (including the `balance` string/number distinction). Includes
+  request/response examples per group and a full endpoint index table.
+
+- README.md: "Backend API — live data note" section now links to
+  docs/api.md.
+
 ### Fixed — 2026-10-18
 
 - backend/src/routes/vesting.js: reject invalid schedule IDs before converting

@@ -429,6 +429,9 @@ SOURCE_SECRET_KEY=<Stellar secret key for transaction signing>
 Without these values the API returns documented stub responses so the frontend
 can be developed independently of a live deployment.
 
+Full endpoint reference — request bodies, query params, response shapes, and
+error codes for every route — is in [docs/api.md](docs/api.md).
+
 ---
 
 ## Status and limitations
